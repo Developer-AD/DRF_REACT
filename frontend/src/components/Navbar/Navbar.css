@@ -1,0 +1,181 @@
+/* Import Fonts Here */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Libre+Baskerville&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@100&display=swap");
+
+* {
+  /* font-family: "Libre Baskerville", serif; */
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hide the spinner arrows */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ---------------- Scrollbar Design CSS --------------- */
+::-webkit-scrollbar{
+    width: 15px;
+    
+}
+::-webkit-scrollbar-track{
+    background: white;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#642bff, #ff22e6);
+    border: 1px solid black;
+    border-radius: 10px;
+}
+/* ---------------- Scrollbar Design CSS --------------- */
+
+:root {
+  /* ============= Colors ============ */
+  --main-bg-color:#050e27;
+  --body-color: #e4e9f7;
+  --sidebar-color: #fff;
+  --primary-color: #695cfe;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #ddd;
+
+  /* --text-color: #707070; */
+  --text-color: rgb(31, 41, 55);
+
+  --form-text-color:#050e27;
+  --form-bg-color:white;
+  /* --form-text-color: white;
+  --form-bg-color:#050e27; */
+  --form-border-color:#050e27;
+  --form-shadow-color: #28d8d8;
+
+  /* ============= Transitions ============ */
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+body {
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: var(--body-color);
+    /* background-image: url(bgimg.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* ============= Top Nav-Bar CSS Starts ============= */
+.user{
+    background-color: white;
+    color: var(--main-bg-color);
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    font-size: 28px;
+    margin-left: 20px;
+}
+
+.user li{
+    width: 100%;
+    height: 100%;
+}
+
+.logo{
+    /* background-color: green; */
+    /* width: auto;
+    height: 8vh; */
+    font-size: 2em;
+    margin-left: 2em;
+    user-select: none;
+}
+
+.items{
+    /* background-color: blue; */
+    /* width: 40vw; */
+    /* height: 30px; */
+
+    display: flex;
+    justify-content: end;
+    margin-right: 2vw;
+}
+.items ul li{
+    list-style: none;
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 8px;
+    margin-left: 15px;
+    
+}
+.items a{
+    text-decoration: none;
+    color: white;
+    /* font-size: 1.5vw; */
+    padding: 0 1em;
+    
+}
+
+.items ul li:hover{
+    background-color: rgb(203, 198, 215);
+}
+
+.items ul li:hover a{
+    color: var(--main-bg-color);
+}
+
+.navbar-top {
+    background-color: var(--main-bg-color);
+    color: rgb(253, 253, 253);
+    height: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    font-weight: 400;
+    font-style: normal;
+    /* font-size: 1em;  */
+    font-size: 10px;
+
+    box-shadow: 0px 0px 10px red;
+}
+
+/* -------- Search-bar CSS Starts -------- */
+.search-bar{
+  background-color: var(--body-color);
+  height: 32px;
+  display: flex;
+  padding: 0px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  /* justify-content: center; */
+  align-items: center;
+  /* display: none; */
+}
+
+.search-bar a{
+  color: var(--main-bg-color);
+  padding-right: 5px;
+}
+
+.search-bar input{
+  background:transparent;
+    /* background-color: yellow; */
+    width: 250px;
+    height: 35px;
+    font-weight: 500;
+
+    border: none;
+    outline: none;
+    transition: 0.8s;
+  }
+    /* -------- Search-bar CSS Ends -------- */
+
+/* ============= Top Nav-Bar CSS Ends ============= */

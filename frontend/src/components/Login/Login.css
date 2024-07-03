@@ -1,0 +1,178 @@
+/* Import Fonts Here */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Libre+Baskerville&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@100&display=swap");
+
+* {
+  /* font-family: "Libre Baskerville", serif; */
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+  /* ============= Colors ============ */
+  --main-bg-color:#050e27;
+  --body-color: #e4e9f7;
+  --sidebar-color: #fff;
+  --primary-color: #695cfe;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #ddd;
+
+  /* --text-color: #707070; */
+  --text-color: rgb(31, 41, 55);
+
+  --form-text-color:#050e27;
+  --form-bg-color:white;
+  /* --form-text-color: white;
+  --form-bg-color:#050e27; */
+  --form-border-color:#050e27;
+  --form-shadow-color: #28d8d8;
+
+  /* ============= Transitions ============ */
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+body {
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: var(--body-color);
+    /* background-image: url(bgimg.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* ========== Forms CSS Starts ========== */
+.form-design-login{
+    position: relative;
+    background: transparent;
+    border: 2px solid var(--form-border-color);
+    border-radius: 10px;
+    box-shadow: 0 0 30px var(--form-shadow-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25em;
+    height: 25em;
+}
+
+
+/*----------- Contact Form Design Ends----------- */
+.form-design .form-box{
+    width: 100%;
+    padding: 40px;
+}
+
+.form-box h2{
+    font-size: 2em;
+    /* color: rgb(14, 14, 59); */
+    color:var(--form-text-color);
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    /* border-bottom: 2px solid rgb(14, 14, 59); */
+    border-bottom: 2px solid var(--form-text-color);
+    margin-top: 10px;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    /* color: rgb(14, 14, 59); */
+    color: var(--form-text-color);
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: 5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    /* color: ; */
+    font-weight: 600;
+    padding: 0px 35px 0px 5px;
+}
+
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    /* color: rgb(14, 14, 59); */
+    color: var(--form-text-color);
+    line-height: 57px;
+}
+
+.forgot-password{
+    font-size: 0.9em;
+    font-weight: 500;
+    display: flex;
+    margin-top: 20px;
+    justify-content: right;
+}
+
+.forgot-password a{
+    text-decoration: none;
+    /* color: rgb(14, 14, 59); */
+    color: var(--form-text-color);
+}
+
+.forgot-password a:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    /* background: rgb(14, 14, 59); */
+    /* color: white; */
+    background: var(--form-text-color);
+    color: var(--form-bg-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+.login-register{
+    font-size: 0.9em;
+    font-weight: 500;
+    /* color: rgb(14, 14, 59); */
+    color: var(--form-text-color);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-register p a{
+    text-decoration: none;
+    /* color: rgb(14, 14, 59); */
+    color: var(--form-text-color);
+    font-weight: 600;
+}
+
+.login-register p a:hover{
+    text-decoration: underline;
+}
+/* Login Form Design */
