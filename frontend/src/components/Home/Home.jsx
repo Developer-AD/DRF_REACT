@@ -1,26 +1,17 @@
 import React from 'react'
 import './Home.css'
 import ContentArea from '../ContentArea/ContentArea'
+import Sidebar from '../Sidebar/Sidebar'
+
 
 export default function Home() {
   return (
     <>
-     <header>
-
-    </header>
-
     <main>
-      <div class="navbar-left">
-        <div class="sidebar">
-
-        </div>
-      </div>
-
-      <div class="content-area">
+        <Sidebar/>
         <ContentArea/>
-      </div>
+        
     </main>
-
     <footer></footer>
     </>
   )

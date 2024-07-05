@@ -3,11 +3,11 @@ import './Contact.css'
 
 export default function Contact() {
   return (
-    <div class="form-design-contact">
-      <div class="form-box-contact">
+    <div className="form-design-contact">
+      <div className="form-box-contact">
         <h2>Contact Us</h2>
         <form method="post">
-          <div class="input-box-contact">
+          <div className="input-box-contact">
             <input
               type="text"
               maxlength="30"
@@ -16,7 +16,7 @@ export default function Contact() {
             />
           </div>
 
-          <div class="input-box-contact">
+          <div className="input-box-contact">
             <input
               type="email"
               maxlength="30"
@@ -25,7 +25,7 @@ export default function Contact() {
             />
           </div>
 
-          <div class="input-box-contact">
+          <div className="input-box-contact">
             <input
               type="number"
               min="0"
@@ -36,7 +36,7 @@ export default function Contact() {
             />
           </div>
 
-          <div class="textarea-contact">
+          <div className="textarea-contact">
             <textarea
               name=""
               id=""
@@ -47,7 +47,7 @@ export default function Contact() {
             ></textarea>
           </div>
 
-          <button class="btn" type="submit">
+          <button className="btn" type="submit">
             Submit
           </button>
         </form>

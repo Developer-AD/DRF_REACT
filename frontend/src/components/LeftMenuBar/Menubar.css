@@ -1,0 +1,172 @@
+/* Import Fonts Here */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Libre+Baskerville&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@100&display=swap");
+
+* {
+  /* font-family: "Libre Baskerville", serif; */
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hide the spinner arrows */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* ---------------- Scrollbar Design CSS --------------- */
+::-webkit-scrollbar{
+    width: 15px;
+    
+}
+::-webkit-scrollbar-track{
+    background: white;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(#642bff, #ff22e6);
+    border: 1px solid black;
+    border-radius: 10px;
+}
+/* ---------------- Scrollbar Design CSS --------------- */
+
+:root {
+  /* ============= Colors ============ */
+  --main-bg-color:#050e27;
+  --body-color: #e4e9f7;
+  --sidebar-color: #fff;
+  --primary-color: #695cfe;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #ddd;
+
+  /* --text-color: #707070; */
+  --text-color: rgb(31, 41, 55);
+
+  --form-text-color:#050e27;
+  --form-bg-color:white;
+  /* --form-text-color: white;
+  --form-bg-color:#050e27; */
+  --form-border-color:#050e27;
+  --form-shadow-color: #28d8d8;
+
+  /* ============= Transitions ============ */
+  --tran-02: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.4s ease;
+  --tran-05: all 0.5s ease;
+}
+
+body {
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: var(--body-color);
+    /* background-image: url(bgimg.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sidebar{
+    /* background: var(--sidebar-color); */
+    /* background-color: red; */
+    top: 12vh;
+    left: 0;
+    height: 100%;
+    width: 150%;
+    color: white;
+    /* overflow: scroll; */
+    /* padding: 10px 14px; */
+}
+
+.sidebar .text{
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.sidebar ul{
+    background-color: var(--main-bg-color);
+    list-style: none;
+}
+
+.sidebar ul li{
+    line-height: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.sidebar ul li:last-child{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding-left: 30px;
+    font-weight: 500;
+    display: block;
+    border-left: 3px solid transparent;
+}
+
+.sidebar ul ul li{
+    line-height: 40px;
+    border-bottom: none;
+
+}
+
+.sidebar ul ul li a{
+    font-size: 17px;
+    color: white;
+    padding-left: 50px;
+}
+
+
+.sidebar ul li a span{
+    position: relative;
+    /* top: 50%; */
+    left: 80px;
+    font-size: 20px;
+    /* background-color: red; */
+    transform: translateY(-50%);
+    transition: transform 0.5s ease-in-out;
+}
+
+
+/* Animation for Menu */
+.sidebar ul li.active a{
+    color: cyan;
+    background: #1e1e1e;
+    border-left-color: cyan;
+    
+}
+
+/* Animation for Sub-menu */
+.sidebar ul ul li.active a{
+    color: cyan;
+    background: var(--main-bg-color);
+    font-weight: 600;
+    border-left: none;
+    /* border-left-color: red; */
+    /* padding-left: 55px;     */
+}
+
+.sidebar ul li a span.rotate{
+    /* background-color: yellow; */
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+.sidebar li a:hover{
+    /* font-size: 17px; */
+    /* color: white; */
+    color: cyan;
+}
+
+/* .submenu {
+    display: none;
+  } */
+
+/* ========= LEFT SIDE-MENU BAR Ends ========= */

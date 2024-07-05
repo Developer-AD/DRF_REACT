@@ -5,16 +5,18 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Contact from './components/Contact/Contact';
 import Home from './components/Home/Home';
-import Navbar from './components/Navbar/Nav old';
+import Navbar from './components/Navbar/Navbar';
 import ContentArea from './components/ContentArea/ContentArea';
+import Sidebar from './components/Sidebar/Sidebar';
 
 function App() {
   return (
     <>
-      {/* <Login/> */}
       {/* <Register/> */}
       <Navbar/>
-      <Home />
+      <Login/>
+      {/* <Home /> */}
+      {/* <Sidebar /> */}
       {/* <ContentArea /> */}
     </>
   );
