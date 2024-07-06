@@ -1,47 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import axios from 'axios'
+import axios from "axios";
 
-export default function Update() {
 
+export default function Student() {
   const navigate = useNavigate();
 
-
-  const [id, setId] = useState(0);
   const [name, setName] = useState("");
   const [roll, setRoll] = useState(0);
   const [city, setCity] = useState("");
 
-  useEffect(() => {
-      setId(localStorage.getItem("id"));
-      setName(localStorage.getItem("name"));
-      setRoll(localStorage.getItem("roll"));
-      setCity(localStorage.getItem("city"));
-      
-  },[]);
 
   const handleSubmit = (e) => {
-    const formData = new FormData();
+    e.preventDefault();
+    // alert(" " + name + " " + roll + " " + city);
 
+    const formData = new FormData();
+    
     formData.append("name", name);
     formData.append("roll", roll);
-    formData.append("city",city);
-
-    e.preventDefault();
-    // alert(id + " " + name + " " + roll + " " + city);
-
-     axios
-        //   .put(`http://127.0.0.1:8000/api/student-api/${id}`, {name: name,roll: roll,city: city,})
-          .put(`http://127.0.0.1:8000/api/student-api/${id}`, formData)
-          .then((response) => {
-            // alert("Success response");
-            console.log(response);
-
-            // After getting response redicted to dashboard.
-            navigate("/dashboard");
-          });
+    formData.append("city", city);
 
 
+    axios
+      .post("http://127.0.0.1:8000/api/student-api/", formData)
+      .then((response) => {
+        // alert("Success response");
+        console.log(response.data);
+
+        // After getting response redicted to dashboard.
+        navigate("/dashboard");
+      });
   };
 
   return (
@@ -49,8 +38,8 @@ export default function Update() {
       <div>
         <Link to="/dashboard">Student Dashboard</Link>
       </div>
-      
-      <h1>Update Student Data</h1>
+
+      <h1>Add Student Data</h1>
 
       <form action="">
         Name :
@@ -83,7 +72,7 @@ export default function Update() {
           value={city}
         />{" "}
         <br />
-        <button onClick={handleSubmit}>Update</button>
+        <button onClick={handleSubmit}>ADD</button>
       </form>
     </div>
   );

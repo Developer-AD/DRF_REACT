@@ -15,15 +15,6 @@ export default function Dashboard() {
     });
   };
 
-  const handleUpdate = (id) => {
-    alert('Handle Update Clicked');
-    // axios.put("http://127.0.0.1:8000/api/student-api/", )
-    // .then((response) => {
-    //   console.log(response.data);
-    //   setData(response.data);
-    // });
-  };
-
   const handleDelete = (id) => {
     // alert('Handle Delete Clicked');
     axios.delete(`http://127.0.0.1:8000/api/student-api/${id}`)
@@ -40,7 +31,7 @@ export default function Dashboard() {
 
 
   const storeLocally = (id, name, roll, city) => {
-    alert('Store Locally Clicked');
+    // alert('Store Locally Clicked');
     localStorage.setItem("id", id);
     localStorage.setItem("name", name);
     localStorage.setItem("roll", roll);
@@ -52,7 +43,7 @@ export default function Dashboard() {
     <div>
       <Navbar />
       <div>
-        <Link to="/">Home</Link>
+        <Link to="/add">Add Student</Link>
       </div>
       <center>
         <h2>Welcome to student dashboard.</h2> <hr />
@@ -62,15 +53,17 @@ export default function Dashboard() {
       <div>
         <table>
           <tr>
+              <th>S. No.</th>
               <th>ID</th>
               <th>Name</th>
               <th>Roll No</th>
               <th>EDIT</th>
               <th>DELETE</th>
             </tr>
-          {data.map((item) => {
+          {data.map((item, index) => {
             return (
               <tr>
+                <td>{index+1}</td>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
                 <td>{item.roll}</td>

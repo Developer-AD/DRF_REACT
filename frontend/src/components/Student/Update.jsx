@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
 export default function Update() {
@@ -21,20 +21,17 @@ export default function Update() {
   },[]);
 
   const handleSubmit = (e) => {
-    const formData = new FormData();
-
-    formData.append("name", name);
-    formData.append("roll", roll);
-    formData.append("city",city);
-
     e.preventDefault();
-    // alert(id + " " + name + " " + roll + " " + city);
+    alert(id + " " + name + " " + roll + " " + city);
 
      axios
-        //   .put(`http://127.0.0.1:8000/api/student-api/${id}`, {name: name,roll: roll,city: city,})
-          .put(`http://127.0.0.1:8000/api/student-api/${id}`, formData)
+          .put(`http://127.0.0.1:8000/api/student-api/${id}`, {
+            name: name,
+            roll: roll,
+            city: city,
+          })
           .then((response) => {
-            // alert("Success response");
+            alert("Success response");
             console.log(response);
 
             // After getting response redicted to dashboard.
@@ -46,10 +43,6 @@ export default function Update() {
 
   return (
     <div>
-      <div>
-        <Link to="/dashboard">Student Dashboard</Link>
-      </div>
-      
       <h1>Update Student Data</h1>
 
       <form action="">
@@ -77,12 +70,10 @@ export default function Update() {
         <input
           type="text"
           onChange={(e) => {
-            setCity(e.target.value);
-          }}
+            setCity(e.target.value)}}
           name="city"
           value={city}
-        />{" "}
-        <br />
+        /> <br />
         <button onClick={handleSubmit}>Update</button>
       </form>
     </div>

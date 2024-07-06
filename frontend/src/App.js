@@ -12,6 +12,7 @@ import ContentArea from './components/ContentArea/ContentArea';
 import Sidebar from './components/Sidebar/Sidebar';
 import Dashboard from './components/Dashboard/Dashboard';
 import Update from './components/Update/Update';
+import Student from './components/Student/Student';
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/update" element={<Update />} />
+          <Route exact path="/add" element={<Student />} />
           {/* <Route path="*" element={<NoPage />} /> */}
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
