@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import './Login.css'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
 
@@ -11,6 +13,10 @@ export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const [student, setStudent] = useState([]);
+
+  const navigate = useNavigate();
+
   // const handleChange = (e) => {
   //   const { key, value } = e.target;
   //   // setFormData({...formData, [key]: value})
@@ -18,8 +24,42 @@ export default function Login() {
   // }
 
   const submitForm = (e) => {
+    alert('Submit form called');
     e.preventDefault();
+
     alert("Username :" + username + ", Password :" + password);
+
+    let formData = new FormData();
+    formData.append("username", username);
+    formData.append("password", password);
+
+    // List key/value pairs
+    // for (let item of formData) {
+    //   alert(`${item[0]} = ${item[1]}`)};
+
+      // for (let [name, value] of formData) {
+      // alert(`${name} = ${value}`);}
+
+      // formData.forEach((value, key) => {
+      //   alert(`${key} and ${value}`);
+      //   });
+
+        // Axios Request.
+        axios.get("http://127.0.0.1:8000/api/student-api/")
+        // axios
+        //   .post("http://127.0.0.1:8000/api/student-api/", {
+        //     username: username,
+        //     password: password,
+        //   })
+          .then((response) => {
+            alert("Success response");
+            console.log(response.data);
+            setStudent(response.data);
+
+            // After getting response redicted to dashboard.
+            navigate("/dashboard");
+          })
+          .catch((error) => alert("Error Occured"));
   }
 
 
@@ -37,6 +77,7 @@ export default function Login() {
                 type="text"
                 maxlength="28"
                 required
+                value={username}
                 onChange={(e)=>{setUsername(e.target.value)}}
               />
               <label>Email</label>
@@ -49,6 +90,7 @@ export default function Login() {
               <input
                 type="password"
                 maxlength="28"
+                value={password}
                 onChange={(e)=>{setPassword(e.target.value)}}
                 required
               />
