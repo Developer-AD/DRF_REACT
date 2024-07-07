@@ -23,9 +23,9 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
-          <Route exact path="/update" element={<Update />} />
+          <Route exact path="/update/:id" element={<Update />} />
           <Route exact path="/add" element={<Student />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
+          <Route path="/login" element={<Home />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
       </BrowserRouter>

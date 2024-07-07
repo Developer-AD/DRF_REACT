@@ -341,8 +341,8 @@ main {
 
 /* Extra CSS */
 .center{
-    margin-top: 10vh;
+    margin-top: 5vh;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     /* align-items: center; */
 }

@@ -30,15 +30,6 @@ export default function Dashboard() {
   }, []);
 
 
-  const storeLocally = (id, name, roll, city) => {
-    // alert('Store Locally Clicked');
-    localStorage.setItem("id", id);
-    localStorage.setItem("name", name);
-    localStorage.setItem("roll", roll);
-    localStorage.setItem("city", city);
-  };
-
-
   return (
     <div>
       <Navbar />
@@ -69,8 +60,8 @@ export default function Dashboard() {
                 <td>{item.roll}</td>
                 <td>{item.city}</td>
                 <td>
-                  <Link to="/update">
-                  <button onClick={() => storeLocally(item.id, item.name, item.roll, item.city)}>edit</button>
+                  <Link to={`/update/${item.id}`}>
+                  <button>edit</button>
                   </Link>
                 </td>
                 <td>

@@ -5,26 +5,13 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
 
-  // const [formData, setFormData] = useState({
-  //   username:'',
-  //   password:''
-  // });
-
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const [student, setStudent] = useState([]);
-
   const navigate = useNavigate();
 
-  // const handleChange = (e) => {
-  //   const { key, value } = e.target;
-  //   // setFormData({...formData, [key]: value})
-  //   // alert('FormData : ', setFormData);
-  // }
-
   const submitForm = (e) => {
-    alert('Submit form called');
+    // alert('Submit form called');
     e.preventDefault();
 
     alert("Username :" + username + ", Password :" + password);
@@ -33,33 +20,25 @@ export default function Login() {
     formData.append("username", username);
     formData.append("password", password);
 
-    // List key/value pairs
-    // for (let item of formData) {
-    //   alert(`${item[0]} = ${item[1]}`)};
-
-      // for (let [name, value] of formData) {
+    // for (let [name, value] of formData) {
       // alert(`${name} = ${value}`);}
 
-      // formData.forEach((value, key) => {
-      //   alert(`${key} and ${value}`);
-      //   });
-
-        // Axios Request.
-        axios.get("http://127.0.0.1:8000/api/student-api/")
         // axios
         //   .post("http://127.0.0.1:8000/api/student-api/", {
         //     username: username,
         //     password: password,
         //   })
-          .then((response) => {
-            alert("Success response");
-            console.log(response.data);
-            setStudent(response.data);
+        //   .then((response) => {
+        //     alert("Success response");
+        //     console.log(response.data);
+        //     setStudent(response.data);
 
-            // After getting response redicted to dashboard.
-            navigate("/dashboard");
-          })
-          .catch((error) => alert("Error Occured"));
+        //     // After getting response redicted to dashboard.
+        //     navigate("/dashboard");
+        //   })
+        //   .catch((error) => alert("Error Occured"));
+
+
   }
 
 

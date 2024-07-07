@@ -1,46 +1,47 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useParams } from "react-router-dom";
 import axios from 'axios'
 
 export default function Update() {
+  let params = useParams();
+  let navigate = useNavigate();
 
-  const navigate = useNavigate();
+  const [student, setStudent] = useState({id: 0, name: "", roll:0, city: ""})
 
 
-  const [id, setId] = useState(0);
-  const [name, setName] = useState("");
-  const [roll, setRoll] = useState(0);
-  const [city, setCity] = useState("");
 
   useEffect(() => {
-      setId(localStorage.getItem("id"));
-      setName(localStorage.getItem("name"));
-      setRoll(localStorage.getItem("roll"));
-      setCity(localStorage.getItem("city"));
-      
-  },[]);
+      const loadStudent = () => {
+        axios
+          .get(`http://127.0.0.1:8000/api/student-api/${params.id}`)
+          .then((response) => {
+            setStudent(response.data);
+          });
+      };
+    loadStudent();
+  }, [params.id]);
+
+  const handleInputs = (event) => {
+    const { name, value } = event.target;
+    setStudent((prevStudent) => ({
+      ...prevStudent,
+      [name]: value, // Update the specific field in student state
+    }));
+  };
+
 
   const handleSubmit = (e) => {
-    const formData = new FormData();
-
-    formData.append("name", name);
-    formData.append("roll", roll);
-    formData.append("city",city);
-
     e.preventDefault();
-    // alert(id + " " + name + " " + roll + " " + city);
 
      axios
-        //   .put(`http://127.0.0.1:8000/api/student-api/${id}`, {name: name,roll: roll,city: city,})
-          .put(`http://127.0.0.1:8000/api/student-api/${id}`, formData)
-          .then((response) => {
-            // alert("Success response");
-            console.log(response);
+       .put(`http://127.0.0.1:8000/api/student-api/${params.id}`, student)
+       .then((response) => {
+        //  alert("Success response");
+         console.log(response);
 
-            // After getting response redicted to dashboard.
-            navigate("/dashboard");
-          });
-
+         // After getting response redicted to dashboard.
+         navigate("/dashboard");
+       });
 
   };
 
@@ -49,38 +50,32 @@ export default function Update() {
       <div>
         <Link to="/dashboard">Student Dashboard</Link>
       </div>
-      
+
       <h1>Update Student Data</h1>
 
       <form action="">
         Name :
         <input
           type="text"
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
+          onChange={handleInputs}
           name="name"
-          value={name}
+          value={student.name}
         />
         <br />
         Roll No :
         <input
           type="number"
-          onChange={(e) => {
-            setRoll(e.target.value);
-          }}
+          onChange={handleInputs}
           name="roll"
-          value={roll}
+          value={student.roll}
         />
         <br />
         City :
         <input
           type="text"
-          onChange={(e) => {
-            setCity(e.target.value);
-          }}
+          onChange={handleInputs}
           name="city"
-          value={city}
+          value={student.city}
         />{" "}
         <br />
         <button onClick={handleSubmit}>Update</button>

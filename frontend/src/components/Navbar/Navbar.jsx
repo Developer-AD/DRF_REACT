@@ -1,14 +1,14 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 // HomeItem Component
 function HomeItem({ item, url }) {
   return (
     <li className="home-items">
-      <a href={url}>
+      <Link to={url}>
         <span className="text nav-text">{item}</span>
-      </a>
+      </Link>
     </li>
   );
 }
@@ -49,9 +49,10 @@ export default function Navbar() {
           <SearchBar />
           <ul>
             <HomeItem item="Home" url="/" />
-            <HomeItem item="Blog" url="/blog" />
-            <HomeItem item="Contact" url="/contact" />
             <HomeItem item="Login" url="/login" />
+            <HomeItem item="Dashboard" url="/dashboard" />
+            <HomeItem item="Login" url="/login" />
+            <HomeItem item="Logout" url="/logout" />
           </ul>
           <UserIcon />
         </div>
